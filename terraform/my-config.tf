@@ -14,6 +14,10 @@ variable "folder-id" {
      type = string
  }
 
+ variable "Vms-count" {
+     type = number 
+ }
+
  terraform {
    required_providers {
      yandex = {
@@ -32,7 +36,7 @@ variable "folder-id" {
 resource "yandex_compute_instance" "vms" {
   platform_id = "standard-v1"
   zone        = "ru-central1-a"
-  count       = 2
+  count       = var.Vms-count
   name        = "from-terraform-vm${count.index}"
 
   resources {
