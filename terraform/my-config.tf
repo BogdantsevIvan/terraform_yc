@@ -67,6 +67,3 @@ resource "yandex_vpc_subnet" "subnet" {
   v4_cidr_blocks = ["10.2.0.0/16"]
 }
  
-# output "external_ip_address_vms" {
-#   value = yandex_compute_instance.vms.index.network_interface.0.nat_ip_address
-# }
